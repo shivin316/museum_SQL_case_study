@@ -15,7 +15,7 @@ where museum_id is NULL
 
 -- 2) Are there museuems without any paintings?
 
-select * from museum 
+select count(distinct museum_id) as num_of_museum_wo_painting from museum 
 where museum_id not in (select museum_id from work)
 
 -- 3) How many paintings have an asking price of more than their regular price? 
